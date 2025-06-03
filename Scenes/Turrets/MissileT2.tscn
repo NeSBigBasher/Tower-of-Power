@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://wahe5nicar5u"]
+
+[ext_resource type="Texture2D" uid="uid://ca1sfepr8rjxx" path="res://Assets/Towers/towerDefense_tile180.png" id="1_f0gps"]
+[ext_resource type="Texture2D" uid="uid://jfoflhxdfjdq" path="res://Assets/Towers/towerDefense_tile228.png" id="2_b0pvu"]
+[ext_resource type="Texture2D" uid="uid://cpldyfse8htdm" path="res://Assets/Towers/towerDefense_tile251.png" id="3_dnq4p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3e2p0"]
+radius = 175.0
+
+[node name="MissileT2" type="Node2D"]
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("1_f0gps")
+
+[node name="Turret" type="Sprite2D" parent="."]
+texture = ExtResource("2_b0pvu")
+
+[node name="Missile1" type="Sprite2D" parent="Turret"]
+position = Vector2(5, -10)
+texture = ExtResource("3_dnq4p")
+
+[node name="Missile2" type="Sprite2D" parent="Turret"]
+position = Vector2(5, 10)
+texture = ExtResource("3_dnq4p")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_3e2p0")
